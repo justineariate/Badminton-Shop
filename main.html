@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <!-- <i class="fas fa-racket logo-icon"></i>- -->
+            <div class="logo-text">Smash<span>Zone</span></div>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <div class="cart-icon" id="cartIcon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </div>
+            <!-- <button class="btn btn-primary">Order Now</button> -->
+            <a href="#menu">
+              <button class="btn btn-primary">Order Now</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Premium Badminton Accessories</h1>
+        <p>You can buy whatever your heart wants</p>
+        <!-- <button class="btn btn-secondary">View Menu</button> -->
+        <a href="#menu"><button class="btn btn-secondary">View Item</button></a>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Item</h2>
+        </div>
+        <div class="menu-categories">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="racket">Racket</button>
+          <button class="category-btn" data-category="shuttlecock">
+            Shuttlecock
+          </button>
+          <button class="category-btn" data-category="shoes">Shoes</button>
+          <button class="category-btn" data-category="accessories">
+            Accessories
+          </button>
+        </div>
+        <div class="menu-grid" id="menuGrid">
+          <!-- Menu items will be dynamically added here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Your Order</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+
+        <!-- Cart Items -->
+        <div class="cart-items" id="cartItems">
+          <!-- Cart items will be dynamically added here -->
+        </div>
+
+        <!-- Checkout Form -->
+        <div class="checkout-form" id="checkoutForm">
+          <h3 style="margin-bottom: 20px">Checkout Information</h3>
+          <div class="form-group">
+            <label for="customerName">Full Name</label>
+            <input
+              type="text"
+              id="customerName"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="customerEmail">Email</label>
+            <input
+              type="email"
+              id="customerEmail"
+              placeholder="john@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="customerPhone">Phone Number</label>
+            <input
+              type="tel"
+              id="customerPhone"
+              placeholder="(555) 123-4567"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="customerAddress">Delivery Address</label>
+            <textarea
+              id="customerAddress"
+              rows="3"
+              placeholder="123 Main St, City, State, ZIP"
+              required
+            ></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="paymentMethod">Payment Method</label>
+              <select id="paymentMethod" required>
+                <option value="">Select Payment</option>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="cash">Cash on Delivery</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="deliveryTime">Delivery Time</label>
+              <select id="deliveryTime" required>
+                <option value="">Select Time</option>
+                <option value="asap">As Soon As Possible</option>
+                <option value="30min">30 Minutes</option>
+                <option value="45min">45 Minutes</option>
+                <option value="60min">60 Minutes</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-outline" id="backToCart">
+              Back to Cart
+            </button>
+            <button class="btn btn-primary" id="placeOrder">Place Order</button>
+          </div>
+        </div>
+
+        <!-- Order Confirmation -->
+        <div class="order-confirmation" id="orderConfirmation">
+          <div class="confirmation-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3 class="confirmation-title">Order Confirmed!</h3>
+          <p class="confirmation-message">
+            Thank you for your order. Your item will be delivered soon.
+          </p>
+          <div class="order-summary" id="orderSummary">
+            <!-- Order summary will be dynamically added here -->
+          </div>
+          <button class="btn btn-primary" id="newOrder">Start New Order</button>
+        </div>
+
+        <!-- Cart Total and Checkout Button -->
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-btn" id="proceedToCheckout">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
